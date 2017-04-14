@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function _vue_profile {
+  local shome="${_vue_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+  PATH="$shome/bin:$shome/exec:$PATH"
+
+  VUE_VERSION="${VUE_VERSION:-2.2.6}"
+  VUE_CLI_VERSION="${VUE_CLI_VERSION:-2.8.1}"
+}
+
+_vue_profile
