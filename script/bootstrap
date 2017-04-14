@@ -5,6 +5,7 @@ function bootstrap {
   source "$shome/script/profile"
 
   block compile yarn
+  (set +f; cd bin && ln -nfs ../node_modules/.bin/vue* .)
 }
 
 bootstrap
