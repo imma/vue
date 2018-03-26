@@ -5,7 +5,9 @@ function bootstrap {
   source "$shome/script/profile"
 
   block compile yarn
-  (cd "$shome/bin" && ln -nfs ../node_modules/.bin/vue .)
+  local pth_vue="$(yarn exec -s which vue 2>/dev/null || true)"
+  mkdir -p "$shome/bin"
+  ln -nfs "$pth_vue" "$shome/bin/"
 }
 
 bootstrap
