@@ -5,9 +5,11 @@ function version {
   source "$shome/script/profile"
 
   local ver_vue="$(vue --version 2>/dev/null || true)"
+  local ver_vuepress="$(vuepress --version 2>/dev/null || true)"
   jq -n \
     --arg vue "$ver_vue" \
-    '{vue: $vue}'
+    --arg vuepress "$ver_vuepress" \
+    '{vue: $vue, vuepress: $vuepress}'
 }
 
 version "$@"

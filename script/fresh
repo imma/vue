@@ -9,6 +9,10 @@ function main {
     return 1
   fi
 
+  if ! type -P vuepress >/dev/null; then
+    return 1
+  fi
+
   yarn check 1>/dev/null 2>&1
 }
 
